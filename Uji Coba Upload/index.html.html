@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pesan Makanan</title>
+</head>
+<body>
+  <h1>Form Pemesanan Makanan</h1>
+  <form id="formPesan">
+    <label>Nama:</label><br/>
+    <input type="text" id="nama" required /><br/><br/>
+
+    <label>Pilih Makanan:</label><br/>
+    <select id="makanan">
+      <option value="Nasi Goreng">Nasi Goreng</option>
+      <option value="Mie Ayam">Mie Ayam</option>
+      <option value="Bakso">Bakso</option>
+    </select><br/><br/>
+
+    <label>Jumlah:</label><br/>
+    <input type="number" id="jumlah" min="1" value="1" /><br/><br/>
+
+    <button type="submit">Pesan Sekarang</button>
+  </form>
+
+  <script>
+    document.getElementById("formPesan").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      // Ambil data dari form
+      const nama = document.getElementById("nama").value;
+      const makanan = document.getElementById("makanan").value;
+      const jumlah = document.getElementById("jumlah").value;
+
+      // Simpan ke localStorage
+      localStorage.setItem("nama", nama);
+      localStorage.setItem("makanan", makanan);
+      localStorage.setItem("jumlah", jumlah);
+
+      // Pindah ke halaman pesanan
+      window.location.href = "pesanan.html";
+    });
+  </script>
+</body>
+</html>

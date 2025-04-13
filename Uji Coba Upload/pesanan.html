@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Pesanan</title>
+</head>
+<body>
+  <h1>Detail Pesanan Anda</h1>
+  <div id="hasilPesanan"></div>
+
+  <script>
+    // Ambil data dari localStorage
+    const nama = localStorage.getItem("nama");
+    const makanan = localStorage.getItem("makanan");
+    const jumlah = localStorage.getItem("jumlah");
+
+    // Tampilkan ke halaman
+    const hasil = `
+      <p>Nama Pemesan: <strong>${nama}</strong></p>
+      <p>Makanan Dipesan: <strong>${makanan}</strong></p>
+      <p>Jumlah: <strong>${jumlah}</strong></p>
+    `;
+
+    document.getElementById("hasilPesanan").innerHTML = hasil;
+  </script>
+</body>
+</html>
